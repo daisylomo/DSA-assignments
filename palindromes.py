@@ -1,36 +1,26 @@
-class Palindrome:
-    def __init__(self):
-        self.stack = []
-        self.queue = []
+import re
 
-    def pushCharacter(self, ch):
-        self.stack.append(ch)
+def Palindrome(s):
+    # Remove all non-alphanumeric characters and convert to lowercase
+    cleaned = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
 
-    def enqueueCharacter(self, ch):
-        self.queue.append(ch)
+    stack = []
+    queue = []
 
-    def popCharacter(self):
-        return self.stack.pop()
+    # Push/enqueue each character in cleaned string
+    for ch in cleaned:
+        stack.append(ch)
+        queue.append(ch)
 
-    def dequeueCharacter(self):
-        return self.queue.pop(0)
+    # Compare characters from stack and queue
+    while len(stack) > 0:
+        if stack.pop() != queue.pop(0):
+            return False
+    return True
 
-if __name__ == "__main__":
-    s = input().strip()
-    obj = Palindrome()
 
-    for ch in s:
-        obj.pushCharacter(ch)
-        obj.enqueueCharacter(ch)
-
-    is_palindrome = True
-
-    for i in range(len(s) // 2):
-        if obj.popCharacter() != obj.dequeueCharacter():
-            is_palindrome = False
-            break
-
-    if is_palindrome:
+s = input("Enter a word:").strip()
+if Palindrome(s):
         print(f"The word, {s}, is a palindrome.")
-    else:
+else:
         print(f"The word, {s}, is not a palindrome.")
