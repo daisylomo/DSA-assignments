@@ -2,6 +2,7 @@ import re
 
 def Palindrome(s):
     # Remove all non-alphanumeric characters and convert to lowercase
+    # does this by replacing them with an empty string
     cleaned = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
 
     stack = []
@@ -19,7 +20,7 @@ def Palindrome(s):
     return True
 
 
-s = input("Enter a word:").strip()
+s = input("Enter a word: ").strip()
 if Palindrome(s):
         print(f"The word, {s}, is a palindrome.")
 else:

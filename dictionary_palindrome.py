@@ -9,14 +9,14 @@ _total_grants = 13
 codeword_map = {
     1: 'EchoOne', 2: 'Phantom2', 3: 'Cipher3', 4: 'NodeFour',
     5: 'DeltaFive', 6: 'HexaSix', 7: 'Sev3nKey', 8: 'OctoShade',
-    9: 'NineRun', 10: 'TenFold', 11: 'Prime11', 12: 'TwelveX', 13: 'Red13',
+    9: 'NinerRun', 10: 'TenFold', 11: 'Prime11', 12: 'TwelveX', 13: 'Red13',
 }
 
 test_cases = [
     ("racecar", True, 2),
     ("hello", False, 2),
     ("A man, a plan, a canal, Panama", True, 3),
-    ("Doc, note I dissent. A fast never prevents a fatness. I diet on cod.", True, 3),
+    ("Doc, note I dissent. A fast never prevents a fatness. I diet ont cod.", True, 3),
     ("Are we not pure? “No sir!” Panama’s moody Noriega brags. “It is garbage!” Irony dooms a man — a prisoner up to new era", True, 3)
 ]
 
